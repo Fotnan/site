@@ -19,11 +19,11 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">SL </th>
-                                <th scope="col">Slider Title</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Slider Image</th>
-                                <th scope="col">Action</th>
+                                <th scope="col" width="5%">SL </th>
+                                <th scope="col" width="15%">Slider Title</th>
+                                <th scope="col" width="25%">Description</th>
+                                <th scope="col" width="15%">Slider Image</th>
+                                <th scope="col" width="15%">Action</th>
                             </tr>
                             </thead>
                             <tbody>
