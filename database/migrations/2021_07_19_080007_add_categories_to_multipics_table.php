@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMultipicsTable extends Migration
+class AddCategoriesToMultipicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateMultipicsTable extends Migration
      */
     public function up()
     {
-        Schema::create('multipics', function (Blueprint $table) {
-            $table->id();
-            $table->string('image', 255);
-            $table->timestamps();
+        Schema::table('multipics', function (Blueprint $table) {
+            $table->foreignId('categories_id')->references('id')->on('categories_port');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateMultipicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('multipics');
+        Schema::table('multipics', function (Blueprint $table) {
+            //
+        });
     }
 }

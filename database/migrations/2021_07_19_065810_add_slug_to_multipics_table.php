@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBrandsTable extends Migration
+class AddSlugToMultipicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateBrandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->id();
-            $table->string('brand_name', 255);
-            $table->string('brand_image', 255);
-            $table->timestamps();
+        Schema::table('multipics', function (Blueprint $table) {
+            $table->string('slug')->nullable();
+            $table->string('title')->nullable();
         });
     }
 
@@ -28,6 +26,8 @@ class CreateBrandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+        Schema::table('multipics', function (Blueprint $table) {
+            Schema::dropIfExists('multipics');
+        });
     }
 }
